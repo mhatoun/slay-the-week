@@ -3,7 +3,6 @@
   --body-background-color: #E6E6FA;
   --header-background-color: #fff;
 
-
   --highlight-color: #8800ff;
   --mild-color: #8400ff21;
 }
@@ -29,6 +28,19 @@ body {
   border-bottom: 1px solid var(--mild-color);
 }
 
+#logo-slay {
+  transform: rotate(-20deg); 
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--highlight-color);
+}
+
+#logo-week{
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  margin-left: -2rem;
+}
+
 #content {
   padding: 5rem 3rem 5rem;
   min-height: 50vh;
@@ -41,7 +53,7 @@ body {
 #lists {
   gap: 2rem;
   .list-title{
-    font-size:3rem;
+    font-size: 3rem;
     color: var(--highlight-color);
     text-transform: uppercase;
     font-weight: bold;
@@ -54,18 +66,6 @@ body {
     min-width: 200px;
     min-height: 300px;
   }
-}
-
-#logo-slay {
-  transform: rotate(-20deg); 
-  font-size: 1.6rem;
-  font-weight: bold;
-  color: var(--highlight-color);
-}
-#logo-week{
-  font-size: 1.5rem;
-  margin-top: 1rem;
-  margin-left: -2rem;
 }
 
 /* Utilities */
@@ -91,11 +91,9 @@ body {
   font-family: "Cyberthrone", serif;
   letter-spacing: 0.25rem;
 }
-
 .font-chunky {
   font-family: "Bungee", sans-serif;
 }
-
 .flex-between {
   justify-content: space-between;
   align-items: center;
