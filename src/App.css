@@ -1,7 +1,7 @@
 :root {
   --body-text-color: #4B0082;
   --body-background-color: #E6E6FA;
-  --header-background-color: #fff;
+  --bright-background-color: #fff;
 
   --highlight-color: #8800ff;
   --mild-color: #8400ff21;
@@ -24,7 +24,7 @@ body {
 
 #header {
   padding: 2rem 3rem 2rem;
-  background: #fff;
+  background: var(--bright-background-color);
   border-bottom: 1px solid var(--mild-color);
 }
 
@@ -62,7 +62,7 @@ body {
     transform: rotate(-5deg); 
   }
   .list {
-    background-color: #fff;
+    background-color: var(--bright-background-color);
     min-width: 200px;
     min-height: 300px;
   }
