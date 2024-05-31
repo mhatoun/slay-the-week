@@ -55,14 +55,13 @@ body {
 }
 
 #new-todo {
-  margin-bottom: 4rem;
+  margin-bottom: 5rem;
   input[type="text"] {
-    padding: 0.5rem;
+    padding: 0 1rem;
     font-size: 1.25rem;
     border: 1px solid var(--mild-color);
     border-radius: 0.25rem;
-    margin-right: 1rem;
-      height: calc(100% - 1rem);
+    height: 100%;
   }
   .input-button-wrapper {
     height: 3rem;
@@ -148,4 +147,16 @@ body {
 
 .primary-button:active {
   background-color: #5e0065; 
+}
+
+.input-button-wrapper {
+  input {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    border-right: 0 !important;
+  }
+  button {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+  }
 }
