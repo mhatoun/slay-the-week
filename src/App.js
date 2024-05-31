@@ -1,17 +1,15 @@
 import './App.css';
+import Header from './Header';
+import Footer from './Footer';
 
 function App() {
   return (
     <div id="app">
-      <header id="header">
-        SLAY the Week
-      </header>
+      <Header />
       <div id="content">
           Here's the todo list
       </div>
-      <div id="footer">
-        <p class='color-muted'>Created by Matt Hatoun</p>
-      </div>
+      <Footer />
     </div>
   );
 }
