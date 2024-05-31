@@ -18,11 +18,15 @@
 body {
   background-color: var(--body-background-color);
   color: var(--body-text-color);
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 #header {
   padding: 2rem 3rem 2rem;
   background: #fff;
+  border-bottom: 1px solid var(--mild-color);
 }
 
 #content {
@@ -90,4 +94,12 @@ body {
 
 .font-chunky {
   font-family: "Bungee", sans-serif;
+}
+
+.flex-between {
+  justify-content: space-between;
+  align-items: center;
+}
+.pointer {
+  cursor: pointer;
 }
