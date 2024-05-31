@@ -57,14 +57,20 @@ body {
     color: var(--highlight-color);
     text-transform: uppercase;
     font-weight: bold;
-    margin-top: -1.9rem;
+    margin-top: -2rem;
     padding: 0 1rem;
     transform: rotate(-5deg); 
+    margin-bottom: 1rem;
   }
   .list {
     background-color: var(--bright-background-color);
     min-width: 200px;
     min-height: 300px;
+    .list-item {
+      margin-left: 1rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--mild-color);
+    }
   }
 }
 
