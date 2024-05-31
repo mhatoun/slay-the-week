@@ -1,0 +1,17 @@
+#header {
+  padding: 3rem;
+}
+
+#content {
+  padding: 2rem 3rem 5rem;
+  min-height: 50vh;
+}
+
+#footer {
+  padding: 3rem;
+}
+
+/* Utilities */
+.color-muted {
+  color: #6c757d;
+}

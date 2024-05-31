@@ -9,6 +9,9 @@ function App() {
       <div id="content">
           Here's the todo list
       </div>
+      <div id="footer">
+        <p class='color-muted'>Created by Matt Hatoun</p>
+      </div>
     </div>
   );
 }
