@@ -1,6 +1,8 @@
 :root {
-  --standard-text-color: #4B0082;
-  --standard-background-color: #E6E6FA;
+  --body-text-color: #4B0082;
+  --body-background-color: #E6E6FA;
+  --header-background-color: #fff;
+
 
   --highlight-color: #8800ff;
   --mild-color: #8400ff21;
@@ -14,16 +16,17 @@
 }
 
 body {
-  background-color: var(--standard-background-color);
-  color: var(--standard-text-color);
+  background-color: var(--body-background-color);
+  color: var(--body-text-color);
 }
 
 #header {
-  padding: 3rem;
+  padding: 2rem 3rem 2rem;
+  background: #fff;
 }
 
 #content {
-  padding: 2rem 3rem 5rem;
+  padding: 5rem 3rem 5rem;
   min-height: 50vh;
 }
 
@@ -38,15 +41,27 @@ body {
     color: var(--highlight-color);
     text-transform: uppercase;
     font-weight: bold;
-    margin-top: -3rem;
+    margin-top: -1.9rem;
     padding: 0 1rem;
-    transform: rotate(-20deg); 
+    transform: rotate(-5deg); 
   }
   .list {
     background-color: #fff;
     min-width: 200px;
     min-height: 300px;
   }
+}
+
+#logo-slay {
+  transform: rotate(-20deg); 
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--highlight-color);
+}
+#logo-week{
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  margin-left: -2rem;
 }
 
 /* Utilities */
@@ -70,6 +85,9 @@ body {
 }
 .font-pop {
   font-family: "Cyberthrone", serif;
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.25rem;
+}
 
+.font-chunky {
+  font-family: "Bungee", sans-serif;
 }
