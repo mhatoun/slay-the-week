@@ -1,3 +1,14 @@
+:root {
+  --standard-text-color: #4B0082;
+  --standard-background-color: #E6E6FA;
+
+}
+
+body {
+  background-color: var(--standard-background-color);
+  color: var(--standard-text-color);
+}
+
 #header {
   padding: 3rem;
 }
@@ -11,7 +22,28 @@
   padding: 3rem;
 }
 
+#lists {
+  gap: 1rem;
+  .list {
+    background-color: azure;
+    min-width: 200px;
+    min-height: 100px;
+  }
+}
+
 /* Utilities */
 .color-muted {
   color: #6c757d;
+}
+.display-flex {
+  display: flex;
+}
+.flex-grow-1 {
+  flex-grow: 1;
+}
+.rounded-corners {
+  border-radius: 0.25rem;
+}
+.flex-wrap {
+  flex-wrap: wrap;
 }
