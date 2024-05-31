@@ -2,6 +2,15 @@
   --standard-text-color: #4B0082;
   --standard-background-color: #E6E6FA;
 
+  --highlight-color: #8800ff;
+  --mild-color: #8400ff21;
+}
+
+@font-face {
+  font-family: 'Cyberthrone';
+  src: url('./fonts/Cyberthrone.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 body {
@@ -23,11 +32,20 @@ body {
 }
 
 #lists {
-  gap: 1rem;
+  gap: 2rem;
+  .list-title{
+    font-size:3rem;
+    color: var(--highlight-color);
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: -3rem;
+    padding: 0 1rem;
+    transform: rotate(-20deg); 
+  }
   .list {
-    background-color: azure;
+    background-color: #fff;
     min-width: 200px;
-    min-height: 100px;
+    min-height: 300px;
   }
 }
 
@@ -46,4 +64,12 @@ body {
 }
 .flex-wrap {
   flex-wrap: wrap;
+}
+.border-mild {
+  border: 1px solid var(--mild-color);
+}
+.font-pop {
+  font-family: "Cyberthrone", serif;
+  letter-spacing: 0.2rem;
+
 }
