@@ -5,6 +5,10 @@
 
   --highlight-color: #8800ff;
   --mild-color: #8400ff21;
+
+  --rounded-corner: 0.25rem;
+  --font-chunky: "Bungee", sans-serif;
+  --font-pop: "Cyberthrone", serif;
 }
 
 @font-face {
@@ -42,12 +46,27 @@ body {
 }
 
 #content {
-  padding: 5rem 3rem 5rem;
+  padding: 3rem 3rem 5rem;
   min-height: 50vh;
 }
 
 #footer {
   padding: 3rem;
+}
+
+#new-todo {
+  margin-bottom: 4rem;
+  input[type="text"] {
+    padding: 0.5rem;
+    font-size: 1.25rem;
+    border: 1px solid var(--mild-color);
+    border-radius: 0.25rem;
+    margin-right: 1rem;
+      height: calc(100% - 1rem);
+  }
+  .input-button-wrapper {
+    height: 3rem;
+  }
 }
 
 #lists {
@@ -85,7 +104,7 @@ body {
   flex-grow: 1;
 }
 .rounded-corners {
-  border-radius: 0.25rem;
+  border-radius: var(--rounded-corner);
 }
 .flex-wrap {
   flex-wrap: wrap;
@@ -94,11 +113,11 @@ body {
   border: 1px solid var(--mild-color);
 }
 .font-pop {
-  font-family: "Cyberthrone", serif;
+  font-family: var(--font-pop);
   letter-spacing: 0.25rem;
 }
 .font-chunky {
-  font-family: "Bungee", sans-serif;
+  font-family: var(--font-chunky);
 }
 .flex-between {
   justify-content: space-between;
@@ -106,4 +125,27 @@ body {
 }
 .pointer {
   cursor: pointer;
+}
+.height-100 {
+  height: 100%;
+}
+.primary-button {
+  background-color: #dd0bf5; 
+  color: #ffffff; 
+  border: 1px solid #b300a4; 
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border-radius: var(--rounded-corner);
+  font-family: var(--font-chunky);
+  padding: 1rem;
+}
+
+.primary-button:hover {
+  background-color: #800082; 
+}
+
+.primary-button:active {
+  background-color: #5e0065; 
 }
