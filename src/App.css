@@ -5,10 +5,17 @@
 
   --highlight-color: #8800ff;
   --mild-color: #8400ff21;
+  --contrast-color: #f4fb12;
 
   --rounded-corner: 0.25rem;
   --font-chunky: "Bungee", sans-serif;
   --font-pop: "Cyberthrone", serif;
+
+  --primary-button-background-color: #0b59f5;
+  --primary-button-text-color: #ffffff;
+  --primary-button-border-color: #084fdc;
+  --primary-button-hover-color: #073ead;
+  --primary-button-click-color: #063084;
 }
 
 @font-face {
@@ -27,7 +34,7 @@ body {
 }
 
 #header {
-  padding: 2rem 3rem 2rem;
+  padding: 1rem 3rem 1rem;
   background: var(--bright-background-color);
   border-bottom: 1px solid var(--mild-color);
 }
@@ -79,6 +86,7 @@ body {
     padding: 0 1rem;
     transform: rotate(-5deg); 
     margin-bottom: 1rem;
+    width: 200px;
   }
   .list {
     background-color: var(--bright-background-color);
@@ -111,6 +119,9 @@ body {
 .border-mild {
   border: 1px solid var(--mild-color);
 }
+.border-contrast {
+  border: 1px solid var(--contrast-color);
+}
 .font-pop {
   font-family: var(--font-pop);
   letter-spacing: 0.25rem;
@@ -129,9 +140,9 @@ body {
   height: 100%;
 }
 .primary-button {
-  background-color: #dd0bf5; 
-  color: #ffffff; 
-  border: 1px solid #b300a4; 
+  background-color: var(--primary-button-background-color);
+  color: var(--primary-button-text-color);
+  border: 1px solid var(--primary-button-border-color); 
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: all 0.2s ease;
@@ -142,11 +153,11 @@ body {
 }
 
 .primary-button:hover {
-  background-color: #800082; 
+  background-color: var(--primary-button-hover-color);
 }
 
 .primary-button:active {
-  background-color: #5e0065; 
+  background-color: var(--primary-button-click-color);
 }
 
 .input-button-wrapper {
