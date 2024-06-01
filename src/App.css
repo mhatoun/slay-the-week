@@ -5,17 +5,18 @@
 
   --highlight-color: #8800ff;
   --mild-color: #8400ff21;
-  --contrast-color: #fff200;
+  --contrast-color: #5AFF15;
 
   --rounded-corner: 0.25rem;
   --font-chunky: "Bungee", sans-serif;
   --font-pop: "Cyberthrone", serif;
 
-  --primary-button-background-color: #0b59f5;
+  --primary-button-background-color: #3581B8;
   --primary-button-text-color: #ffffff;
-  --primary-button-border-color: #084fdc;
-  --primary-button-hover-color: #073ead;
-  --primary-button-click-color: #063084;
+  --primary-button-border-color: #2c6a96;
+  --primary-button-hover-color: #1d4969;
+  --primary-button-click-color: #163850;
+
 }
 
 @font-face {
