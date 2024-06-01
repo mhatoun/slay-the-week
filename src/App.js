@@ -23,7 +23,48 @@ function App() {
     });
     setNewTask('');
   };
+  const handleDragStart = (event, index, listKey) => {
+    event.dataTransfer.setData('index', index);
+    event.dataTransfer.setData('listKey', listKey);
+  };
+
+  const removeItem = (listItems, listKey, index) => {
+    const list = listItems[listKey];
+    const updatedList = [...list.slice(0, index), ...list.slice(index + 1)];
+    return {
+      ...listItems,
+      [listKey]: [...updatedList],
+    };
+  }
+
+  const addItem = (listItems, listKey, index, item) => {
+    const list = listItems[listKey];
+    const updatedList = [
+      ...list.slice(0, index),
+      item,
+      ...list.slice(index),
+    ];
+    return {
+      ...listItems,
+      [listKey]: [...updatedList],
+    };
+  }
+
+  const handleDrop = (event, index, listKey) => {
+    const draggedIndex = event.dataTransfer.getData('index');
+    const draggedListKey = event.dataTransfer.getData('listKey');
+    if (draggedIndex === index && draggedListKey === listKey) return;
+
+    let newListItems = removeItem(listItems, draggedListKey, draggedIndex);
+    newListItems = addItem(newListItems, listKey, index, listItems[draggedListKey][draggedIndex]);
+    setListItems(newListItems);
+  };
+
+  const handleDragOver = (event) => {
+    event.preventDefault();
+  };
   const newTodoProps = { newTask, setNewTask, handleAddTask };
+  const listProps = { handleDragStart, handleDrop, handleDragOver };
   return (
     <div id="app">
       <Header />
@@ -31,9 +72,9 @@ function App() {
 
         <NewTodo {...newTodoProps} />
         <div id="lists" className="display-flex flex-wrap">
-          <List name="Todo" items={listItems['todo']} />
-          <List name="Doing" />
-          <List name="Done" />
+          <List name="Todo" listKey='todo' items={listItems['todo']} {...listProps} />
+          <List name="Doing" listKey='doing' items={listItems['doing']} {...listProps} />
+          <List name="Done" listKey='done' items={listItems['done']} {...listProps} />
         </div>
       </div>
       <Footer />
