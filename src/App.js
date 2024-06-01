@@ -33,7 +33,6 @@ function App() {
 
   const removeItem = (listItems, listKey, index) => {
     const list = listItems[listKey];
-    debugger
     const updatedList = [...list.slice(0, index), ...list.slice(index + 1)];
     return {
       ...listItems,
@@ -72,7 +71,7 @@ function App() {
   const handleDragEnterList = (listKey) => {
     setDraggingOverListKey(listKey);
   }
-  const handleDragLeaveList = (listKey) => {
+  const handleDragLeaveList = () => {
     setDraggingOverListKey(null);
   }
   const handleDragOverList = (listKey) => {

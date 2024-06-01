@@ -5,9 +5,9 @@ const List = ({name, listKey, items, handleDragStart, handleDrop, handleDragOver
   return (
     <div 
       className={`list flex-grow-1 rounded-corners border-contrast ${draggingOverListKey == listKey ? 'dragged-over' : ''}`} 
-      onDragEnter={() => handleDragEnterList(listKey)}
-      onDragLeave={() => handleDragLeaveList(listKey)}
-      onDragOver={() => handleDragOverList(listKey)}>
+      onDragEnter={ () => handleDragEnterList(listKey) }
+      onDragLeave={ handleDragLeaveList }
+      onDragOver={ () => handleDragOverList(listKey) }>
       <div 
         className='list-title font-pop' 
         onDrop={(e) => handleDrop(e, 0, listKey)}
