@@ -109,10 +109,9 @@ body {
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
-
     }
-    :last-child {
-      border-bottom: none;
+    .list-end-dropzone {
+      padding-bottom: 2rem;
     }
   }
 }
@@ -149,6 +148,9 @@ body {
 .flex-between {
   justify-content: space-between;
   align-items: center;
+}
+.flex-direction-column {
+  flex-direction: column;
 }
 .pointer {
   cursor: pointer;
