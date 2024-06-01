@@ -62,6 +62,7 @@ function App() {
     let newListItems = removeItem(listItems, draggedListKey, draggedIndex);
     newListItems = addItem(newListItems, listKey, index, listItems[draggedListKey][draggedIndex]);
     setListItems(newListItems);
+    setDraggingOverListKey(null);
   };
 
   const handleDragOver = (event) => {
