@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const List = ({name, listKey, items, handleDragStart, handleDrop, handleDragOver}) => {
+const List = ({name, listKey, items, handleDragStart, handleDrop, handleDragOver, draggingOverListKey, handleDragEnterList, handleDragLeaveList, handleDragOverList}) => {
+
   return (
     <div 
-      className='list flex-grow-1 rounded-corners border-contrast' >
+      className={`list flex-grow-1 rounded-corners border-contrast ${draggingOverListKey == listKey ? 'dragged-over' : ''}`} 
+      onDragEnter={() => handleDragEnterList(listKey)}
+      onDragLeave={() => handleDragLeaveList(listKey)}
+      onDragOver={() => handleDragOverList(listKey)}>
       <div 
         className='list-title font-pop' 
         onDrop={(e) => handleDrop(e, 0, listKey)}

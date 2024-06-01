@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Header from './Header';
 import Footer from './Footer';
@@ -15,6 +15,9 @@ const initialData = {
 function App() {
   const [listItems, setListItems] = useState(initialData);
   const [newTask, setNewTask] = useState('');
+  const [draggingOverListKey, setDraggingOverListKey] = useState(null);
+
+
   const handleAddTask = () => {
     if (newTask.trim() === '') return;
     setListItems({
@@ -64,8 +67,21 @@ function App() {
   const handleDragOver = (event) => {
     event.preventDefault();
   };
+
+  const handleDragEnterList = (listKey) => {
+    setDraggingOverListKey(listKey);
+  }
+  const handleDragLeaveList = (listKey) => {
+    setDraggingOverListKey(null);
+  }
+  const handleDragOverList = (listKey) => {
+    setDraggingOverListKey(listKey);
+  }
+
+
+
   const newTodoProps = { newTask, setNewTask, handleAddTask };
-  const listProps = { handleDragStart, handleDrop, handleDragOver };
+  const listProps = { handleDragStart, handleDrop, handleDragOver, draggingOverListKey, handleDragEnterList, handleDragLeaveList, handleDragOverList};
   return (
     <div id="app">
       <Header />
