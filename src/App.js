@@ -6,9 +6,9 @@ import NewTodo from './NewTodo';
 import List from './List';
 
 const initialData = {
-  todo: ["Buy groceries", "Walk the dog", "Do laundry", "Wash dishes"],
-  doing: [],
-  done: [],
+  todo: ["Buy groceries", "Walk the dog", "Do laundry", "Wash dishes", "Read",],
+  doing: ["Cook dinner", "Clean the house", "Workout", "Code", "Study"],
+  done: ["Call Doctor", "Pay bills", "Water plants", "Meditate", "Yoga"],
 };
 
 
@@ -30,6 +30,7 @@ function App() {
 
   const removeItem = (listItems, listKey, index) => {
     const list = listItems[listKey];
+    debugger
     const updatedList = [...list.slice(0, index), ...list.slice(index + 1)];
     return {
       ...listItems,
@@ -51,7 +52,7 @@ function App() {
   }
 
   const handleDrop = (event, index, listKey) => {
-    const draggedIndex = event.dataTransfer.getData('index');
+    const draggedIndex = parseInt(event.dataTransfer.getData('index'));
     const draggedListKey = event.dataTransfer.getData('listKey');
     if (draggedIndex === index && draggedListKey === listKey) return;
 
