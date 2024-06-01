@@ -11,13 +11,25 @@ const initialData = {
   done: [],
 };
 
+
 function App() {
   const [listItems, setListItems] = useState(initialData);
+  const [newTask, setNewTask] = useState('');
+  const handleAddTask = () => {
+    if (newTask.trim() === '') return;
+    setListItems({
+      ...listItems,
+      todo: [newTask.trim(), ...listItems.todo],
+    });
+    setNewTask('');
+  };
+  const newTodoProps = { newTask, setNewTask, handleAddTask };
   return (
     <div id="app">
       <Header />
       <div id="content">
-        <NewTodo />
+
+        <NewTodo {...newTodoProps} />
         <div id="lists" className="display-flex flex-wrap">
           <List name="Todo" items={listItems['todo']} />
           <List name="Doing" />

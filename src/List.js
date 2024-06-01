@@ -8,7 +8,7 @@ const List = ({name, items}) => {
       </div>
       {items && items.map((item, index) => {
         return (
-          <div key={index} className='list-item'>
+          <div key={index} className='list-item grab'>
             {item}
           </div>
         );

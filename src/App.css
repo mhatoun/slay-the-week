@@ -5,7 +5,7 @@
 
   --highlight-color: #8800ff;
   --mild-color: #8400ff21;
-  --contrast-color: #f4fb12;
+  --contrast-color: #EEE8AA;
 
   --rounded-corner: 0.25rem;
   --font-chunky: "Bungee", sans-serif;
@@ -97,6 +97,9 @@ body {
       padding: 0.5rem 0;
       border-bottom: 1px solid var(--mild-color);
     }
+    :last-child {
+      border-bottom: none;
+    }
   }
 }
 
@@ -135,6 +138,9 @@ body {
 }
 .pointer {
   cursor: pointer;
+}
+.grab {
+  cursor: grab;
 }
 .height-100 {
   height: 100%;
