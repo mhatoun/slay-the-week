@@ -92,6 +92,8 @@ body {
     background-color: var(--bright-background-color);
     min-width: 200px;
     min-height: 300px;
+    overflow-x: hidden;
+
     .list-item {
       margin-left: 1rem;
       padding: 0.5rem 0;
@@ -176,4 +178,11 @@ body {
     border-top-left-radius: 0 !important;
     border-bottom-left-radius: 0 !important;
   }
+}
+
+.flex-item {
+  flex: 1;
+  margin: 0 10px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
