@@ -4,6 +4,7 @@ import Header from './Header';
 import Footer from './Footer';
 import NewTodo from './NewTodo';
 import List from './List';
+import Checkmark from './Checkmark';
 
 const initialData = {
   todo: ["Buy groceries", "Walk the dog", "Do laundry", "Wash dishes", "Read",],
@@ -91,7 +92,7 @@ function App() {
         <div id="lists" className="display-flex flex-wrap">
           <List name="Todo" listKey='todo' items={listItems['todo']} {...listProps} />
           <List name="Doing" listKey='doing' items={listItems['doing']} {...listProps} />
-          <List name="Done" listKey='done' items={listItems['done']} {...listProps} />
+          <List name="Done" listKey='done' items={listItems['done']} displayCheckmarks={true} {...listProps} />
         </div>
       </div>
       <Footer />

@@ -106,11 +106,16 @@ body {
 
     .list-item {
       margin-left: 1rem;
-      padding: 0.5rem 0;
       border-bottom: 1px solid var(--mild-color);
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
+      .checkmark {
+        padding-right: 0.25rem;
+      }
+      .list-item-text{
+        padding: 0.5rem 0;
+      }
     }
     .list-end-dropzone {
       padding-bottom: 2rem;

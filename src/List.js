@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import Checkmark from "./Checkmark";
 
-const List = ({name, listKey, items, handleDragStart, handleDrop, handleDragOver, draggingOverListKey, handleDragEnterList, handleDragLeaveList, handleDragOverList}) => {
+const List = ({name, listKey, items, handleDragStart, handleDrop, handleDragOver, draggingOverListKey, handleDragEnterList, handleDragLeaveList, handleDragOverList, displayCheckmarks}) => {
 
   return (
     <div 
@@ -16,15 +16,25 @@ const List = ({name, listKey, items, handleDragStart, handleDrop, handleDragOver
       </div>
       {items && items.map((item, index) => {
         return (
-          <div 
-            key={index} className='list-item grab'
-            draggable='true'
-            onDragStart={(e) => handleDragStart(e, index, listKey)}
-            onDrop={(e) => handleDrop(e, index, listKey)}
-            onDragOver={(e) => handleDragOver(e)}
-          >
-            {item}
-          </div>
+
+            <div 
+              key={index} className='list-item grab display-flex flex-between'
+              draggable='true'
+              onDragStart={(e) => handleDragStart(e, index, listKey)}
+              onDrop={(e) => handleDrop(e, index, listKey)}
+              onDragOver={(e) => handleDragOver(e)}
+            >
+              {displayCheckmarks && 
+                <div className='checkmark'>
+                  <Checkmark animate={false} size={30} />
+                </div>
+              }
+
+              <div className='flex-grow-1 list-item-text'>
+                {item}
+              </div>
+            </div>
+
         );
       })}
       <div 
