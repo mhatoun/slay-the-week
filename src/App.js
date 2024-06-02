@@ -17,6 +17,7 @@ function App() {
   const [listItems, setListItems] = useState(initialData);
   const [newTask, setNewTask] = useState('');
   const [draggingOverListKey, setDraggingOverListKey] = useState(null);
+  const [playingCheckmarkAnimation, setPlayingCheckmarkAnimation] = useState(false);
 
 
   const handleAddTask = () => {
@@ -63,6 +64,7 @@ function App() {
     newListItems = addItem(newListItems, listKey, index, listItems[draggedListKey][draggedIndex]);
     setListItems(newListItems);
     setDraggingOverListKey(null);
+    setPlayingCheckmarkAnimation(true);
   };
 
   const handleDragOver = (event) => {
@@ -89,10 +91,15 @@ function App() {
       <div id="content">
 
         <NewTodo {...newTodoProps} />
-        <div id="lists" className="display-flex flex-wrap">
-          <List name="Todo" listKey='todo' items={listItems['todo']} {...listProps} />
-          <List name="Doing" listKey='doing' items={listItems['doing']} {...listProps} />
-          <List name="Done" listKey='done' items={listItems['done']} displayCheckmarks={true} {...listProps} />
+        <div className='display-grid'>
+          <div id='animated-checkmark' className={`${playingCheckmarkAnimation ? 'animating' : ''}`}>
+            { playingCheckmarkAnimation && <Checkmark animate={true} size={300} setPlayingCheckmarkAnimation={setPlayingCheckmarkAnimation} /> }
+          </div>
+          <div id="lists" className="display-flex flex-wrap">
+            <List name="Todo" listKey='todo' items={listItems['todo']} {...listProps} />
+            <List name="Doing" listKey='doing' items={listItems['doing']} {...listProps} />
+            <List name="Done" listKey='done' items={listItems['done']} displayCheckmarks={true} {...listProps} />
+          </div>
         </div>
       </div>
       <Footer />

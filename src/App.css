@@ -79,6 +79,9 @@ body {
 
 #lists {
   gap: 2.5rem;
+  grid-column: 1;
+  grid-row: 1;
+
   .list-title{
     font-size: 3rem;
     color: var(--highlight-color);
@@ -123,12 +126,27 @@ body {
   }
 }
 
+#animated-checkmark{
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: center;
+  opacity: 0;
+  transition: all 1s ease;
+  &.animating {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+}
+
 /* Utilities */
 .color-muted {
   color: #6c757d;
 }
 .display-flex {
   display: flex;
+}
+.display-grid {
+  display: grid;
 }
 .flex-grow-1 {
   flex-grow: 1;
