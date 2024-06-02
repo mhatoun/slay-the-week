@@ -5,6 +5,7 @@ import Footer from './Footer';
 import NewTodo from './NewTodo';
 import List from './List';
 import AnimatedCheckmark from './AnimatedCheckmark';
+import SlayCounter from './SlayCounter';
 
 const initialData = {
   todo: ["Buy groceries", "Walk the dog", "Do laundry", "Wash dishes", "Read",],
@@ -12,6 +13,7 @@ const initialData = {
   done: ["Call Doctor", "Pay bills", "Water plants", "Meditate", "Yoga"],
 };
 
+const slayCounterGoal = 10;
 
 function App() {
   const [listItems, setListItems] = useState(initialData);
@@ -91,8 +93,12 @@ function App() {
     <div id="app">
       <Header />
       <div id="content">
-
-        <NewTodo {...newTodoProps} />
+        <div className='display-flex align-items-center'>
+          <div className = 'flex-grow-1'>
+            <NewTodo {...newTodoProps} />
+          </div>
+          <SlayCounter listItems={ listItems } goal={ slayCounterGoal } />
+        </div>
         <div className='display-grid'>
           <div id='animated-checkmark' className={`${playingCheckmarkAnimation ? 'animating' : ''}`}>
             { playingCheckmarkAnimation && <AnimatedCheckmark size={300} setPlayingCheckmarkAnimation={setPlayingCheckmarkAnimation} /> }

@@ -64,7 +64,7 @@ body {
 }
 
 #new-todo {
-  margin-bottom: 5rem;
+  margin-right: 3rem;
   input[type="text"] {
     padding: 0 1rem;
     font-size: 1.25rem;
@@ -75,12 +75,43 @@ body {
   .input-button-wrapper {
     height: 3rem;
   }
+
 }
+#slay-counter {
+  background-color: var(--bright-background-color);
+  border: 1px solid var(--mild-color);
+  text-align: center;
+  overflow: hidden;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  .goal,.current {
+    padding: 0.5rem;
+  }
+  .current {
+    border-right: 1px solid var(--mild-color);
+  }
+}
+
+.slay-counter-header {
+  background-color: var(--body-text-color);
+  color: var(--bright-background-color);
+}
+.slay-counter-values {
+  color: var(--highlight-color);
+  font-size: 3rem;
+  font-weight: bold;
+  align-items: center;
+  &.goal {
+    font-size: 1.8rem;
+  }
+}
+
 
 #lists {
   gap: 2.5rem;
   grid-column: 1;
   grid-row: 1;
+  margin-top: 5rem;
 
   .list-title{
     font-size: 3rem;
@@ -176,6 +207,9 @@ body {
 }
 .flex-direction-column {
   flex-direction: column;
+}
+.align-items-center {
+  align-items: center;
 }
 .pointer {
   cursor: pointer;
