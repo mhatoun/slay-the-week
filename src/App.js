@@ -64,7 +64,9 @@ function App() {
     newListItems = addItem(newListItems, listKey, index, listItems[draggedListKey][draggedIndex]);
     setListItems(newListItems);
     setDraggingOverListKey(null);
-    setPlayingCheckmarkAnimation(true);
+    if (listKey === 'done' && draggedListKey !== 'done') {
+      setPlayingCheckmarkAnimation(true);
+    }
   };
 
   const handleDragOver = (event) => {
