@@ -1,4 +1,4 @@
-import Checkmark from "./Checkmark";
+import StaticCheckmark from './StaticCheckmark';
 
 const List = ({name, listKey, items, handleDragStart, handleDrop, handleDragOver, draggingOverListKey, handleDragEnterList, handleDragLeaveList, handleDragOverList, displayCheckmarks}) => {
 
@@ -17,23 +17,23 @@ const List = ({name, listKey, items, handleDragStart, handleDrop, handleDragOver
       {items && items.map((item, index) => {
         return (
 
-            <div 
-              key={index} className='list-item grab display-flex flex-between'
-              draggable='true'
-              onDragStart={(e) => handleDragStart(e, index, listKey)}
-              onDrop={(e) => handleDrop(e, index, listKey)}
-              onDragOver={(e) => handleDragOver(e)}
-            >
-              {displayCheckmarks && 
-                <div className='checkmark'>
-                  <Checkmark animate={false} size={30} />
-                </div>
-              }
-
-              <div className='flex-grow-1 list-item-text'>
-                {item}
+          <div 
+            key={index} className='list-item grab display-flex flex-between'
+            draggable='true'
+            onDragStart={(e) => handleDragStart(e, index, listKey)}
+            onDrop={(e) => handleDrop(e, index, listKey)}
+            onDragOver={(e) => handleDragOver(e)}
+          >
+            {displayCheckmarks && 
+              <div className='checkmark'>
+                <StaticCheckmark size={30} />
               </div>
+            }
+
+            <div className='flex-grow-1 list-item-text'>
+              {item}
             </div>
+          </div>
 
         );
       })}

@@ -4,24 +4,14 @@ import checkmarkAnimationData from './animations/checkmark.json';
 
 const fullyCheckedFrame = 130;
 
-const Checkmark = ({ animate, size, setPlayingCheckmarkAnimation }) => {
+const Checkmark = ({ size }) => {
   const lottieRef = useRef(null);
-
-  let startFrame = fullyCheckedFrame - 1;
-  if (animate) {
-    startFrame = 0;
-  }
 
   useEffect(() => {
     if (lottieRef.current && lottieRef.current.anim) {
-      lottieRef.current.anim.playSegments([startFrame, fullyCheckedFrame], true);
-      lottieRef.current.anim.setSpeed(2);
-      if (setPlayingCheckmarkAnimation != null) {
-        lottieRef.current.anim.addEventListener('complete', function(e) { setPlayingCheckmarkAnimation(false);});
-      }
+      lottieRef.current.anim.playSegments([fullyCheckedFrame - 1, fullyCheckedFrame], true);
     }
   });
-
 
   return (
     <div>

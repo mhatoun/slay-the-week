@@ -4,7 +4,7 @@ import Header from './Header';
 import Footer from './Footer';
 import NewTodo from './NewTodo';
 import List from './List';
-import Checkmark from './Checkmark';
+import AnimatedCheckmark from './AnimatedCheckmark';
 
 const initialData = {
   todo: ["Buy groceries", "Walk the dog", "Do laundry", "Wash dishes", "Read",],
@@ -95,7 +95,7 @@ function App() {
         <NewTodo {...newTodoProps} />
         <div className='display-grid'>
           <div id='animated-checkmark' className={`${playingCheckmarkAnimation ? 'animating' : ''}`}>
-            { playingCheckmarkAnimation && <Checkmark animate={true} size={300} setPlayingCheckmarkAnimation={setPlayingCheckmarkAnimation} /> }
+            { playingCheckmarkAnimation && <AnimatedCheckmark size={300} setPlayingCheckmarkAnimation={setPlayingCheckmarkAnimation} /> }
           </div>
           <div id="lists" className="display-flex flex-wrap">
             <List name="Todo" listKey='todo' items={listItems['todo']} {...listProps} />
