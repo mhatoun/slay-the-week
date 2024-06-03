@@ -100,14 +100,15 @@ function App() {
           <SlayCounter listItems={ listItems } goal={ slayCounterGoal } />
         </div>
         <div className='overlap'>
-          <div id='animated-checkmark' className={`${playingCheckmarkAnimation ? 'animating' : ''}`}>
-            { playingCheckmarkAnimation && <AnimatedCheckmark size={300} setPlayingCheckmarkAnimation={setPlayingCheckmarkAnimation} /> }
-          </div>
           <div id="lists" className="display-flex flex-wrap">
             <List name="Todo" listKey='todo' items={listItems['todo']} {...listProps} />
             <List name="Doing" listKey='doing' items={listItems['doing']} {...listProps} />
             <List name="Done" listKey='done' items={listItems['done']} displayCheckmarks={true} {...listProps} />
           </div>
+          <div id='animated-checkmark' className={`${playingCheckmarkAnimation ? 'animating' : ''}`}>
+            { playingCheckmarkAnimation && <AnimatedCheckmark size={300} setPlayingCheckmarkAnimation={setPlayingCheckmarkAnimation} /> }
+          </div>
+
         </div>
       </div>
       <Footer />
