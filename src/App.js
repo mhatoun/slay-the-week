@@ -58,6 +58,8 @@ function App() {
   }
 
   const handleDrop = (event, index, listKey) => {
+    setDraggingOverListKey(null);
+
     const draggedIndex = parseInt(event.dataTransfer.getData('index'));
     const draggedListKey = event.dataTransfer.getData('listKey');
     if (draggedIndex === index && draggedListKey === listKey) return;
@@ -65,7 +67,6 @@ function App() {
     let newListItems = removeItem(listItems, draggedListKey, draggedIndex);
     newListItems = addItem(newListItems, listKey, index, listItems[draggedListKey][draggedIndex]);
     setListItems(newListItems);
-    setDraggingOverListKey(null);
     if (listKey === 'done' && draggedListKey !== 'done' && listItems['done'].length + 1 !== slayCounterGoal) {
       setPlayingCheckmarkAnimation(true);
     }
