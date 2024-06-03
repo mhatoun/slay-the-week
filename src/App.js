@@ -8,9 +8,9 @@ import AnimatedCheckmark from './AnimatedCheckmark';
 import SlayCounter from './SlayCounter';
 
 const initialData = {
-  todo: ["Buy groceries", "Walk the dog", "Do laundry", "Wash dishes", "Read",],
-  doing: ["Cook dinner", "Clean the house", "Workout", "Code", "Study"],
-  done: ["Call Doctor", "Pay bills", "Water plants", "Meditate", "Yoga"],
+  todo: ["Buy groceries", "Walk the dog", "Do laundry", "Wash dishes", "Take out trash"],
+  doing: ["Cook dinner", "Clean the house", "Workout", "Code"],
+  done: ["Call Doctor", "Pay bills", "Water plants", "Meditate", "Yoga", "Read", "Study"],
 };
 
 const slayCounterGoal = 10;
@@ -93,7 +93,7 @@ function App() {
     <div id="app">
       <Header />
       <div id="content">
-        <div className='display-flex align-items-center'>
+        <div id="new-and-counter" className='display-flex align-items-center flex-wrap'>
           <div className = 'flex-grow-1'>
             <NewTodo {...newTodoProps} />
           </div>

@@ -63,8 +63,11 @@ body {
   padding: 3rem;
 }
 
+#new-and-counter {
+  gap: 3rem;
+}
 #new-todo {
-  margin-right: 3rem;
+
   input[type="text"] {
     padding: 0 1rem;
     font-size: 1.25rem;
@@ -86,6 +89,7 @@ body {
   align-items: center;
   .goal,.current {
     padding: 0.5rem;
+    min-width: 100px;
   }
   .current {
     border-right: 1px solid var(--mild-color);
