@@ -11,9 +11,7 @@ const Checkmark = ({ size, setPlayingCheckmarkAnimation }) => {
     if (lottieRef.current && lottieRef.current.anim) {
       lottieRef.current.anim.playSegments([0, fullyCheckedFrame], true);
       lottieRef.current.anim.setSpeed(2.5);
-      if (setPlayingCheckmarkAnimation != null) {
-        lottieRef.current.anim.addEventListener('complete', function(e) { setPlayingCheckmarkAnimation(false);});
-      }
+      lottieRef.current.anim.addEventListener('complete', () => setPlayingCheckmarkAnimation(false) );
     }
   });
 

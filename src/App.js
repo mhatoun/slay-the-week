@@ -30,10 +30,6 @@ function App() {
     });
     setNewTask('');
   };
-  const handleDragStart = (event, index, listKey) => {
-    event.dataTransfer.setData('index', index);
-    event.dataTransfer.setData('listKey', listKey);
-  };
 
   const removeItem = (listItems, listKey, index) => {
     const list = listItems[listKey];
@@ -56,6 +52,11 @@ function App() {
       [listKey]: [...updatedList],
     };
   }
+
+  const handleDragStart = (event, index, listKey) => {
+    event.dataTransfer.setData('index', index);
+    event.dataTransfer.setData('listKey', listKey);
+  };
 
   const handleDrop = (event, index, listKey) => {
     setDraggingOverListKey(null);

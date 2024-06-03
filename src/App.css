@@ -6,6 +6,7 @@
   --highlight-color: #8800ff;
   --mild-color: #8400ff21;
   --contrast-color: #5AFF15;
+  --muted-color: #6c757d;
 
   --rounded-corner: 0.25rem;
   --font-chunky: "Bungee", sans-serif;
@@ -66,8 +67,8 @@ body {
 #new-and-counter {
   gap: 3rem;
 }
-#new-todo {
 
+#new-todo {
   input[type="text"] {
     padding: 0 1rem;
     font-size: 1.25rem;
@@ -78,8 +79,8 @@ body {
   .input-button-wrapper {
     height: 3rem;
   }
-
 }
+
 #week-slayed {
   opacity: 0;
   color: var(--contrast-color);
@@ -93,6 +94,7 @@ body {
     transform: scale(1) rotate(-5deg);
   }
 }
+
 #slay-counter {
   background-color: var(--bright-background-color);
   border: 1px solid var(--mild-color);
@@ -131,7 +133,7 @@ body {
   gap: 2.5rem;
   margin-top: 5rem;
 
-  .list-title{
+  .list-title {
     font-size: 3rem;
     color: var(--highlight-color);
     text-transform: uppercase;
@@ -187,7 +189,7 @@ body {
 
 /* Utilities */
 .color-muted {
-  color: #6c757d;
+  color: var(--muted-color);
 }
 .display-flex {
   display: flex;
@@ -206,9 +208,6 @@ body {
 }
 .border-mild {
   border: 1px solid var(--mild-color);
-}
-.border-contrast {
-  border: 1px solid var(--contrast-color);
 }
 .font-pop {
   font-family: var(--font-pop);
