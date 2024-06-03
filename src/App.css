@@ -90,6 +90,9 @@ body {
   .goal,.current {
     padding: 0.5rem;
     min-width: 100px;
+    &.slay-counter-values {
+      padding: 0.75rem 0.5rem;
+    }
   }
   .current {
     border-right: 1px solid var(--mild-color);
