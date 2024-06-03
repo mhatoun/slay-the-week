@@ -66,7 +66,7 @@ function App() {
     newListItems = addItem(newListItems, listKey, index, listItems[draggedListKey][draggedIndex]);
     setListItems(newListItems);
     setDraggingOverListKey(null);
-    if (listKey === 'done' && draggedListKey !== 'done') {
+    if (listKey === 'done' && draggedListKey !== 'done' && listItems['done'].length + 1 !== slayCounterGoal) {
       setPlayingCheckmarkAnimation(true);
     }
   };
@@ -99,7 +99,7 @@ function App() {
           </div>
           <SlayCounter listItems={ listItems } goal={ slayCounterGoal } />
         </div>
-        <div className='display-grid'>
+        <div className='overlap'>
           <div id='animated-checkmark' className={`${playingCheckmarkAnimation ? 'animating' : ''}`}>
             { playingCheckmarkAnimation && <AnimatedCheckmark size={300} setPlayingCheckmarkAnimation={setPlayingCheckmarkAnimation} /> }
           </div>
